@@ -66,7 +66,6 @@ function App() {
               <SingleThought />
             </Route>
           </div>
-          <Footer />
         </div>
       </Router>
     </ApolloProvider>

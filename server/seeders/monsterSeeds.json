@@ -3,26 +3,44 @@
         "name": "Brendamyr",
         "level": 99,
         "sprite": "/client/assets/merchant/Samurai Merchant.gif",
-        "owner": "Brian Kernighan",
-        "stats": {
-            "health": 1000,
-            "strength": 100,
-            "defense": 88,
-            "speed": 77,
-            "swag": 69
-        }
+        "owner": "Brendan Kurylo",
+        "hp": 1200,
+        "str": 100,
+        "def": 88,
+        "spd": 77,
+        "swg": 69
     },
     {
         "name": "Dylatron",
         "level": 97,
-        "sprite": "client/assets/Bot Wheel/Bot Wheel/shoot without FX.png",
-        "owner": "Brian Kernighan",
-        "stats": {
-            "health": 900,
-            "strength": 420,
-            "defense": 60,
-            "speed": 120,
-            "swag": 420
-        }
+        "sprite": " ",
+        "owner": "Dylan Cole",
+        "hp": 900,
+        "str": 420,
+        "def": 60,
+        "spd": 120,
+        "swg": 420
+    },
+    {
+        "name": "Thomasaurus",
+        "level": 97,
+        "sprite": " ",
+        "owner": "Thomas Siopes",
+        "hp": 1000,
+        "str": 300,
+        "def": 95,
+        "spd": 120,
+        "swg": 302
+    },
+    {
+        "name": "Jimalodon",
+        "level": 97,
+        "sprite": " ",
+        "owner": "James Clark",
+        "hp": 8000,
+        "str": 50,
+        "def": 100,
+        "spd": 50,
+        "swg": 9001
     }
 ]

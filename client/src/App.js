@@ -50,7 +50,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/login">
+            {/* <Route exact path="/login">
               <Login />
             </Route>
             <Route exact path="/signup">
@@ -62,9 +62,9 @@ function App() {
             <Route exact path="/profiles/:username">
               <Profile />
             </Route>
-            <Route exact path="/thoughts/:thoughtId">
+            <Route exact path="/thoughts/:thoughtId"> 
               <SingleThought />
-            </Route>
+            </Route> */}
           </div>
           <Footer />
         </div>

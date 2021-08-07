@@ -9,7 +9,8 @@ import { QUERY_THOUGHTS } from '../utils/queries';
 const Home = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
-
+  console.log(loading);
+  console.log(data);
   return (
     <main>
       <div className="flex-row justify-center">

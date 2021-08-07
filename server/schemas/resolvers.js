@@ -48,11 +48,21 @@ const resolvers = {
 
       return { token, user };
     },
-    addMonster: async (parent, { /* Something's gotta go here that I do not understand*/ }, context) => {
+    addMonster: async (parent, { name, level, sprite, hp, str, def, spd, swg }, context) => {
       if (context.user) {
         const monster = await Monster.create({
           // wtf goes here,
+          name,
+          level,
+          sprite,
           owner: context.user.username,
+          stats: {
+            hp,
+            str,
+            def,
+            spd,
+            swg
+          }
         });
 
         await User.findOneAndUpdate(

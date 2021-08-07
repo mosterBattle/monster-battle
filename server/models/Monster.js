@@ -37,6 +37,10 @@ const monsterSchema = new Schema({
     trim: true,
   },
   stats: {
+    health: {
+      type: Number,
+      required: true,
+    },
     strength: {
       type: Number,
       required: true,

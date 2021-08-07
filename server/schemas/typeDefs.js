@@ -15,7 +15,13 @@ const typeDefs = gql`
     level: Number
     sprite: String
     owner: String
-    stats: []!
+    stats: {
+      health: Number
+      strength: Number
+      defense: Number
+      speed: Number
+      swag: Number
+    }
   }
 
   type Auth {

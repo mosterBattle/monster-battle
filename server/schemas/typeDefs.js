@@ -11,13 +11,11 @@ const typeDefs = gql`
 
   type Monster {
     _id: ID
-    level: Int
+    name: String
+    level: Number
     sprite: String
     owner: String
-    strength: Int
-    defense: Int
-    speed: Int
-    swag: Int
+    stats: []!
   }
 
   type Auth {
@@ -28,16 +26,16 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Thought]
-    thought(thoughtId: ID!): Thought
+    monsters(username: String): [Monster]
+    monster(monsterId: ID!): Monster
     me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
+    addMonster(thoughtText: String!): Monster //THIS LINE NEEDS WORK
+    removeMonster(monsterId: ID!): Monster
   }
 `;
 

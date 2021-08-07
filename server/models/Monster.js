@@ -36,9 +36,24 @@ const monsterSchema = new Schema({
     required: true,
     trim: true,
   },
-  stats: [{
-    type: Number,
-  }]
+  stats: {
+    strength: {
+      type: Number,
+      required: true,
+    },
+    defense: {
+      type: Number,
+      required: true,
+    },
+    speed: {
+      type: Number,
+      required: true,
+    },
+    swag: {
+      type: Number,
+      required: true,
+    },
+  }
 });
 
 const Monster = model('Monster', monsterSchema);

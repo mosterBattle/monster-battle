@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Brendamyr",
+        "level": 99,
+        "sprite": "/client/assets/merchant/Samurai Merchant.gif",
+        "owner": "Brendan Kurylo",
+        "hp": 1200,
+        "str": 100,
+        "def": 88,
+        "spd": 77,
+        "swg": 69
+    },
+    {
+        "name": "Dylatron",
+        "level": 97,
+        "sprite": " ",
+        "owner": "Dylan Cole",
+        "hp": 900,
+        "str": 420,
+        "def": 60,
+        "spd": 120,
+        "swg": 420
+    },
+    {
+        "name": "Thomasaurus",
+        "level": 97,
+        "sprite": " ",
+        "owner": "Thomas Siopes",
+        "hp": 1000,
+        "str": 300,
+        "def": 95,
+        "spd": 120,
+        "swg": 302
+    },
+    {
+        "name": "Jimalodon",
+        "level": 97,
+        "sprite": " ",
+        "owner": "James Clark",
+        "hp": 8000,
+        "str": 50,
+        "def": 100,
+        "spd": 50,
+        "swg": 9001
+    }
+]

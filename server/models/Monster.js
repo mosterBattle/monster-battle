@@ -18,24 +18,42 @@ const monsterSchema = new Schema({
   //   default: Date.now,
   //   get: (timestamp) => dateFormat(timestamp),
   // },
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   level: {
-    type: Int,
+    type: Number,
     required: true,
   },
   sprite: {
     type: String,
     required: true,
   },
-  stat1: {
-    type: Int,
+  owner: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  hp: {
+    type: Number,
     required: true,
   },
-  stat2: {
-    type: Int,
+  str: {
+    type: Number,
     required: true,
   },
-  stat3: {
-    type: Int,
+  def: {
+    type: Number,
+    required: true,
+  },
+  spd: {
+    type: Number,
+    required: true,
+  },
+  swg: {
+    type: Number,
     required: true,
   },
 });

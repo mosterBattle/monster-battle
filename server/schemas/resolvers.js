@@ -1,25 +1,25 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, Monster } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('thoughts');
+      return User.find().populate('monsters');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('thoughts');
+      return User.findOne({ username }).populate('monsters');
     },
-    thoughts: async (parent, { username }) => {
+    monsters: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return Monster.find(params).sort({ createdAt: -1 });
     },
-    thought: async (parent, { thoughtId }) => {
-      return Thought.findOne({ _id: thoughtId });
+    monster: async (parent, { monsterId }) => {
+      return Monster.findOne({ _id: monsterId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('thoughts');
+        return User.findOne({ _id: context.user._id }).populate('monsters');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -48,69 +48,43 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { thoughtText }, context) => {
+    addMonster: async (parent, { name, level, sprite, hp, str, def, spd, swg }, context) => {
       if (context.user) {
-        const thought = await Thought.create({
-          thoughtText,
-          thoughtAuthor: context.user.username,
+        const monster = await Monster.create({
+          // wtf goes here,
+          name,
+          level,
+          sprite,
+          owner: context.user.username,
+          hp,
+          str,
+          def,
+          spd,
+          swg
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }
+          { $addToSet: { monsters: monster._id } }
         );
 
-        return thought;
+        return monster;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    addComment: async (parent, { thoughtId, commentText }, context) => {
+    removeMonster: async (parent, { monsterId }, context) => {
       if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
-          {
-            $addToSet: {
-              comments: { commentText, commentAuthor: context.user.username },
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    removeThought: async (parent, { thoughtId }, context) => {
-      if (context.user) {
-        const thought = await Thought.findOneAndDelete({
-          _id: thoughtId,
-          thoughtAuthor: context.user.username,
+        const monster = await Monster.findOneAndDelete({
+          _id: monsterId,
+          owner: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { thoughts: thought._id } }
+          { $pull: { monsters: monster._id } }
         );
 
-        return thought;
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    removeComment: async (parent, { thoughtId, commentId }, context) => {
-      if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          { new: true }
-        );
+        return monster;
       }
       throw new AuthenticationError('You need to be logged in!');
     },

@@ -34,7 +34,7 @@ main {
  */
 
 .mainBody {
-  height: 50vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -44,11 +44,18 @@ main {
 
 .mainBody h1 {
   margin: 1em;
+  text-align: center;
+  color: rgb(66, 0, 191);
+}
+
+.mainBody h4 {
+  color: #ffffff;
+  margin-top: 1em;
 }
 
 .mainOptions {
-  height: 20em;
-  width: 30em;
+  min-height: 20em;
+  min-width: 30em;
   background: rgb(66, 0, 191);
   background: linear-gradient(
     146deg,
@@ -81,6 +88,14 @@ main {
   border-radius: 10px !important;
 }
 
+.formInput {
+  width: 20em;
+  padding: 1em;
+  color: rgba(66, 0, 191, 1);
+  border: none;
+  margin: 1em;
+  border-radius: 10px;
+}
 
 
 h1 {

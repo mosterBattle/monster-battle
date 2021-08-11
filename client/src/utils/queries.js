@@ -6,39 +6,51 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      monsters {
         _id
-        thoughtText
-        createdAt
+        name
+        level
+        sprite
+        hp
+        str
+        def
+        spd
+        swg
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_MONSTERS = gql`
+  query getMonsters {
+    monsters {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      name
+      level
+      sprite
+      owner
+      hp
+      str
+      def
+      spd
+      swg
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+export const QUERY_SINGLE_MONSTER = gql`
+  query getSingleMonster($monsterId: ID!) {
+    monster(monsterId: $monsterId) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
+      name
+      level
+      sprite
+      owner
+      hp
+      str
+      def
+      spd
+      swg
     }
   }
 `;
@@ -49,11 +61,16 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      monsters {
         _id
-        thoughtText
-        thoughtAuthor
-        createdAt
+        name
+        level
+        sprite
+        hp
+        str
+        def
+        spd
+        swg
       }
     }
   }

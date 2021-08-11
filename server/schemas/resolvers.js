@@ -56,13 +56,12 @@ const resolvers = {
           level,
           sprite,
           owner: context.user.username,
-          stats: {
-            hp,
-            str,
-            def,
-            spd,
-            swg
-          }
+          hp,
+          str,
+          def,
+          spd,
+          swg
+
         });
 
         await User.findOneAndUpdate(

@@ -30,34 +30,34 @@ const monsterSchema = new Schema({
   sprite: {
     type: String,
     required: true,
+    trim: true,
   },
   owner: {
     type: String,
     required: true,
     trim: true,
   },
-  stats: {
-    health: {
-      type: Number,
-      required: true,
-    },
-    strength: {
-      type: Number,
-      required: true,
-    },
-    defense: {
-      type: Number,
-      required: true,
-    },
-    speed: {
-      type: Number,
-      required: true,
-    },
-    swag: {
-      type: Number,
-      required: true,
-    },
-  }
+  hp: {
+    type: Number,
+    required: true,
+  },
+  str: {
+    type: Number,
+    required: true,
+  },
+  def: {
+    type: Number,
+    required: true,
+  },
+  spd: {
+    type: Number,
+    required: true,
+  },
+  swg: {
+    type: Number,
+    required: true,
+    trim: true,
+  },
 });
 
 const Monster = model('Monster', monsterSchema);

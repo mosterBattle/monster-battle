@@ -58,6 +58,16 @@ const monsterSchema = new Schema({
     required: true,
     trim: true,
   },
+  wins: {
+    type: Number,
+    required: true,
+    trim: true,
+  },
+  losses: {
+    type: Number,
+    required: true,
+    trim: true,
+  },
 });
 
 const Monster = model('Monster', monsterSchema);

@@ -25,6 +25,21 @@ const userSchema = new Schema({
       ref: 'Monster',
     },
   ],
+  totalMatches: {
+    type: Number,
+    required: true,
+    trim: true,
+  },
+  wins: {
+    type: Number,
+    required: true,
+    trim: true,
+  },
+  gold: {
+    type: Number,
+    required: true,
+    trim: true,
+  },
 });
 
 userSchema.pre('save', async function (next) {

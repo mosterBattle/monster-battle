@@ -16,6 +16,8 @@ export const QUERY_USER = gql`
         def
         spd
         swg
+        wins
+        losses
       }
     }
   }
@@ -34,6 +36,8 @@ export const QUERY_MONSTERS = gql`
       def
       spd
       swg
+      wins
+      losses
     }
   }
 `;
@@ -51,6 +55,8 @@ export const QUERY_SINGLE_MONSTER = gql`
       def
       spd
       swg
+      wins
+      losses
     }
   }
 `;
@@ -71,6 +77,8 @@ export const QUERY_ME = gql`
         def
         spd
         swg
+        wins
+        losses
       }
     }
   }

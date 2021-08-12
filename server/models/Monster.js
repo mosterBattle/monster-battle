@@ -29,7 +29,6 @@ const monsterSchema = new Schema({
   },
   sprite: {
     type: String,
-    required: true,
     trim: true,
   },
   owner: {
@@ -56,7 +55,14 @@ const monsterSchema = new Schema({
   swg: {
     type: Number,
     required: true,
-    trim: true,
+  },
+  wins: {
+    type: Number,
+    required: true,
+  },
+  losses: {
+    type: Number,
+    required: true,
   },
 });
 

@@ -8,12 +8,16 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Battlefield from './pages/battlefield';
+<<<<<<< Updated upstream
 import Profile from './pages/Profile';
 // import Header from './components/Header';
+=======
+import Header from './components/Header';
+>>>>>>> Stashed changes
 // import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint
@@ -47,8 +51,7 @@ function App() {
         <div className="flex-column justify-center min-100-vh">
           <div className="container">
             <Route exact path="/">
-              <Battlefield />
-              <Home />
+              <Header />
             </Route>
             <Route exact path="/login">
               <Login />
@@ -56,11 +59,8 @@ function App() {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <Route exact path="/me">
-              <Profile />
-            </Route>
-            <Route exact path="/profiles/:username">
-              <Profile />
+            <Route exact path="/battle-field">
+              <Battlefield />
             </Route>
           </div>
         </div>

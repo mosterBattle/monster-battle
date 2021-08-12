@@ -1,14 +1,14 @@
-.background {
+/* .background {
     background-size: 1000px ;
     background-repeat: no-repeat;
 }
+
 
 .character {
     width: auto;
     height: 180px;
     image-rendering: pixelated;
     box-shadow: 4px, 10px, 10px #000000;
-
 }
 
 .left {
@@ -29,4 +29,39 @@
     padding-right: 0px;
     width: 1000px;
     margin: 0px;
+} */
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url('../background/arcade-game-world-pixel-scene/45908.jpg');
+
+}
+
+.characterWrapper {
+    width: 80%;
+    height: auto;
+    margin-bottom: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.monster {
+    width: 20vw;
+    height: 30vh;
+    image-rendering: pixelated;
+}
+
+.switchView {
+    transform: rotateY(180deg);
+    height: 40vh;
 }

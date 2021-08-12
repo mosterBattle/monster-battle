@@ -46,7 +46,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-center min-100-vh">
-          <div className="container">
+          <div className="">
             <Route exact path="/">
               <Battlefield />
             </Route>

@@ -11,8 +11,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-// import Battlefield from './pages/battlefield';
-import SingleThought from './pages/SingleThought';
+import Battlefield from './pages/battlefield';
 import Profile from './pages/Profile';
 // import Header from './components/Header';
 // import Footer from './components/Footer';
@@ -48,7 +47,7 @@ function App() {
         <div className="flex-column justify-center min-100-vh">
           <div className="container">
             <Route exact path="/">
-              {/* <Battlefield /> */}
+              <Battlefield />
               <Home />
             </Route>
             <Route exact path="/login">
@@ -62,9 +61,6 @@ function App() {
             </Route>
             <Route exact path="/profiles/:username">
               <Profile />
-            </Route>
-            <Route exact path="/thoughts/:thoughtId">
-              <SingleThought />
             </Route>
           </div>
         </div>

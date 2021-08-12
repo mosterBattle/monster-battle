@@ -28,17 +28,14 @@ const userSchema = new Schema({
   totalMatches: {
     type: Number,
     required: true,
-    trim: true,
   },
   wins: {
     type: Number,
     required: true,
-    trim: true,
   },
   gold: {
     type: Number,
     required: true,
-    trim: true,
   },
 });
 

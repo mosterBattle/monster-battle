@@ -61,6 +61,7 @@ const resolvers = {
           def,
           spd,
           swg
+
         });
 
         await User.findOneAndUpdate(

@@ -30,6 +30,7 @@ const monsterSchema = new Schema({
   sprite: {
     type: String,
     required: true,
+    trim: true,
   },
   owner: {
     type: String,
@@ -55,6 +56,7 @@ const monsterSchema = new Schema({
   swg: {
     type: Number,
     required: true,
+    trim: true,
   },
 });
 

@@ -5,6 +5,7 @@ import character2 from '../assets/Spirit Boxer/spiritBoxer.png';
 import '../assets/css/battlefield.css';
 import '../assets/css/reset.css';
 
+
 function Battlefield() {
     return (
         // <div className='char-div'>

@@ -8,10 +8,10 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-// import Home from './pages/Home';
+import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Battlefield from './pages/battlefield';
+// import Battlefield from './pages/battlefield';
 import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
 // import Header from './components/Header';
@@ -48,7 +48,8 @@ function App() {
         <div className="flex-column justify-center min-100-vh">
           <div className="container">
             <Route exact path="/">
-              <Battlefield />
+              {/* <Battlefield /> */}
+              <Home />
             </Route>
             <Route exact path="/login">
               <Login />

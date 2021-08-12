@@ -8,7 +8,9 @@
         "str": 100,
         "def": 88,
         "spd": 77,
-        "swg": 69
+        "swg": 69,
+        "wins": 0,
+        "losses": 0
     },
     {
         "name": "Dylatron",
@@ -19,7 +21,9 @@
         "str": 420,
         "def": 60,
         "spd": 120,
-        "swg": 420
+        "swg": 420,
+        "wins": 0,
+        "losses": 0
     },
     {
         "name": "Thomasaurus",
@@ -30,7 +34,9 @@
         "str": 300,
         "def": 95,
         "spd": 120,
-        "swg": 302
+        "swg": 302,
+        "wins": 0,
+        "losses": 0
     },
     {
         "name": "Jimalodon",
@@ -41,6 +47,8 @@
         "str": 50,
         "def": 100,
         "spd": 50,
-        "swg": 9001
+        "swg": 9001,
+        "wins": 0,
+        "losses": 0
     }
 ]

@@ -2,21 +2,37 @@
   {
     "username": "Brendan Kurylo",
     "email": "brendankurylo@techfriends.dev",
-    "password": "password01"
+    "password": "password01",
+    "totalMatches": 0,
+    "wins": 0,
+    "losses": 0,
+    "gold": 0
   },
   {
     "username": "James Clark",
     "email": "jamesclark@techfriends.dev",
-    "password": "password02"
+    "password": "password02",
+    "totalMatches": 0,
+    "wins": 0,
+    "losses": 0,
+    "gold": 0
   },
   {
     "username": "Thomas Siopes",
     "email": "thomassiopes@techfriends.dev",
-    "password": "password03"
+    "password": "password03",
+    "totalMatches": 0,
+    "wins": 0,
+    "losses": 0,
+    "gold": 0
   },
   {
     "username": "Dylan Cole",
     "email": "dylancole@techfriends.dev",
-    "password": "password04"
+    "password": "password04",
+    "totalMatches": 0,
+    "wins": 0,
+    "losses": 0,
+    "gold": 0
   }
 ]

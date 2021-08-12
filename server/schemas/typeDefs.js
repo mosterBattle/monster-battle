@@ -7,6 +7,9 @@ const typeDefs = gql`
     email: String
     password: String
     monsters: [Monster]!
+    totalMatches: Int
+    wins: Int
+    gold: Int
   }
 
   type Monster {
@@ -20,6 +23,8 @@ const typeDefs = gql`
     def: Int
     spd: Int
     swg: Int
+    wins: Int
+    losses: Int
   }
 
   type Auth {

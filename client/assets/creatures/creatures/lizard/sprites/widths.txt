@@ -1,2 +1,0 @@
-front individual width: 330
-side individual width: 360

@@ -1,3 +1,0 @@
-front individual widht: 490
-side individual width jump: 440
-side individual width: 420

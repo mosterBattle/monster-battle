@@ -15,3 +15,8 @@
     height: auto;
     image-rendering: pixelated;
 }
+
+.char-div {
+    padding: 400px;
+    padding-top: 500px;
+}

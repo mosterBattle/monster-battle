@@ -5,7 +5,7 @@ import '../assets/css/battlefield.css';
 function Battlefield() {
     return (
         <div className='background' style={{backgroundImage:`url(${background})`}}>
-            <div>
+            <div className='left-char-div'>
                 <img className='left-character' src={character} alt='character'/>
             </div>
         </div>

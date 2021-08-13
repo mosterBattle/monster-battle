@@ -43,8 +43,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-center min-100-vh">
-          <div>
+        <div className="justify-center min-100-vh">
             <Route exact path="/">
               <Header />
             </Route>
@@ -57,7 +56,6 @@ function App() {
             <Route exact path="/battle-field">
               <Battlefield />
             </Route>
-          </div>
         </div>
       </Router>
     </ApolloProvider>

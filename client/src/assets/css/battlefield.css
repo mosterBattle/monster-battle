@@ -35,7 +35,7 @@
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 110%;
     background-blend-mode: multiply;
     display: flex;
     flex-direction: column;
@@ -52,9 +52,9 @@
     justify-content: space-between;
     align-items: baseline;
 }
-.monster img{
-    width: 200px;
-    height: auto;
+.monster {
+    width: auto;
+    height: 200px;
     image-rendering: pixelated;
 }
 .switchView {

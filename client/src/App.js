@@ -12,12 +12,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Battlefield from './pages/battlefield';
-<<<<<<< Updated upstream
-import Profile from './pages/Profile';
-// import Header from './components/Header';
-=======
 import Header from './components/Header';
->>>>>>> Stashed changes
 // import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint

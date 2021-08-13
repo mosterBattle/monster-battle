@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Battlefield from './pages/battlefield';
+import BattlePage from './pages/battlepage';
 import Header from './components/Header';
 // import Footer from './components/Footer';
 
@@ -54,7 +54,7 @@ function App() {
               <Signup />
             </Route>
             <Route exact path="/battle-field">
-              <Battlefield />
+              <BattlePage />
             </Route>
         </div>
       </Router>

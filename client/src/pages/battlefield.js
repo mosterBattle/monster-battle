@@ -17,12 +17,12 @@ import '../assets/css/reset.css';
 
 function Battlefield() {
     return (
-            <div className='background'>
-                <div className="characterWrapper">
-                <img className='monster' src={character} alt='character'/>
-                <img className='monster switchView' src={character2} alt='character2'/>
-                </div>
-            </div> 
+        <div className='background'>
+            <div className="characterWrapper">
+            <img className='monster' src={character} alt='character'/>
+            <img className='monster switchView' src={character2} alt='character2'/>
+            </div>
+        </div> 
     );
 }
 

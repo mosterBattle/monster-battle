@@ -41,9 +41,7 @@ const Login = (props) => {
   };
 
   return (
-    <main className="mainBody">
-      <div>
-        <h1>Monster Battle</h1>
+    <div className="mainBody">
           <div className="mainOptions">
             <h4>Login</h4>
             {data ? (
@@ -85,8 +83,10 @@ const Login = (props) => {
               </div>
             )}
           </div>
-        </div>
-    </main>
+          <div className="buttonBottom">
+            <Link to="/">back to the homepage.</Link>
+            </div>
+          </div>
   );
 };
 

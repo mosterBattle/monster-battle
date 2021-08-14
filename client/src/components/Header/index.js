@@ -9,7 +9,6 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="">
       <div className="">
           {Auth.loggedIn() ? (
             <>
@@ -34,7 +33,6 @@ const Header = () => {
             </div>
           )}
         </div>
-    </header>
   );
 };
 

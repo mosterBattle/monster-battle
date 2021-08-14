@@ -9,7 +9,7 @@ import character from '../assets/Bot Wheel/botWheel.png';
 import character2 from '../assets/Spirit Boxer/spiritBoxer.png';
 import '../assets/css/battlefield.css';
 import '../assets/css/reset.css';
-
+import gameLogic from '../utils/gamelogic.js';
 
 function Battlefield() {
     return (
@@ -29,10 +29,10 @@ function Battlefield() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={6} lg={3}><Button variant="outline-primary">Test Action 1</Button>{' '}</Col>
-                    <Col xs={12} sm={6} lg={3}><Button variant="outline-danger">Test Action 2</Button></Col>
-                    <Col xs={12} sm={6} lg={3}><Button variant="outline-success">Test Action 3</Button></Col>
-                    <Col xs={12} sm={6} lg={3}><Button variant="outline-warning">Test Action 4</Button></Col>
+                    <Col xs={12} sm={6} lg={3}><Button variant="outline-primary" data-attack="100" data-defense="0" value="attack" onClick={gameLogic}>Test Action 1</Button>{' '}</Col>
+                    <Col xs={12} sm={6} lg={3}><Button variant="outline-danger" data-attack="75" data-defense="25" value="attack-with-defense" onClick={gameLogic}>Test Action 2</Button></Col>
+                    <Col xs={12} sm={6} lg={3}><Button variant="outline-success" data-attack="25" data-defense="75" value="defense-with-attack" onClick={gameLogic}>Test Action 3</Button></Col>
+                    <Col xs={12} sm={6} lg={3}><Button variant="outline-warning" data-attack="0" data-defense="100" value="defense" onClick={gameLogic}>Test Action 4</Button></Col>
                 </Row>
                 <Row>
                     <Col xs={12}><Button variant="secondary">Next Round</Button></Col>

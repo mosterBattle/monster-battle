@@ -11,15 +11,6 @@ import '../assets/css/battlefield.css';
 import '../assets/css/reset.css';
 
 
-// function Battlefield() {
-//     return (
-//         <div className='background char-div' style={{backgroundImage:`url(${background})`}}>
-//                 <img className=' left character' src={character} alt='character'/>
-//                 <img className='right character' src={character2} alt='character2'/>
-//         </div>
-//     );
-// }
-
 function Battlefield() {
     return (
         <Card bg={'dark'}>

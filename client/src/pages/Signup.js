@@ -39,9 +39,7 @@ const Signup = () => {
   };
 
   return (
-    <main className="mainBody">
-      <div>
-        <h1>Monster Battle</h1>
+    <div className="mainBody">
           <div className="mainOptions">
           <h4 >Sign Up</h4>
             {data ? (
@@ -91,8 +89,10 @@ const Signup = () => {
               </div>
             )}
           </div>
-        </div>
-    </main>
+          <div className="buttonBottom">
+            <Link to="/">back to the homepage.</Link>
+            </div>
+          </div>
   );
 };
 

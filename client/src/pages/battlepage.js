@@ -1,4 +1,4 @@
-import Battlefield from "../components/battlefield";
+import Battlefield from "../pages/battlefield";
 import Title from "../components/title";
 
 const BattlePage = () => {

@@ -52,7 +52,7 @@ body {
 .characterWrapper {
     width: 60%;
     height: 15%;
-    margin-bottom: 5vh;
+    margin-bottom: 9vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,5 +78,4 @@ body {
 }
 .switchView {
     transform: rotateY(180deg);
-    height: 40vh;
 }

@@ -58,7 +58,7 @@ function App() {
               <BattlePage />
             </Route>
           </div>
-          </div>
+        </div>
       </Router>
     </ApolloProvider>
   );

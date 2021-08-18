@@ -40,6 +40,12 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.buttonBottom {
+  position: absolute;
+  bottom: 15%;
 }
 
 .mainBody h1 {
@@ -1234,8 +1240,8 @@ label form [type="radio"] {
 }
 
 .container {
-  width: 85%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1243,6 +1249,7 @@ label form [type="radio"] {
 .container.container-fluid {
   width: 92%;
 }
+
 
 /* FLEX CONTENT */
 .flex-row {

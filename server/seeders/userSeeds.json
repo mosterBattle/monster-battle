@@ -5,7 +5,6 @@
     "password": "password01",
     "totalMatches": 0,
     "wins": 0,
-    "losses": 0,
     "gold": 0
   },
   {
@@ -14,7 +13,6 @@
     "password": "password02",
     "totalMatches": 0,
     "wins": 0,
-    "losses": 0,
     "gold": 0
   },
   {
@@ -23,7 +21,6 @@
     "password": "password03",
     "totalMatches": 0,
     "wins": 0,
-    "losses": 0,
     "gold": 0
   },
   {
@@ -32,7 +29,6 @@
     "password": "password04",
     "totalMatches": 0,
     "wins": 0,
-    "losses": 0,
     "gold": 0
   }
 ]

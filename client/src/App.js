@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 import BattlePage from './pages/battlepage';
 import Header from './components/Header';
 // import Footer from './components/Footer';
@@ -46,13 +47,19 @@ function App() {
         <div className="container">
           <div className="mainBody">
             <Route exact path="/">
-              <Header />
+              <Profile />
             </Route>
             <Route exact path="/login">
               <Login />
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/me">
+              <Profile />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
             </Route>
             <Route exact path="/battle-field">
               <BattlePage />

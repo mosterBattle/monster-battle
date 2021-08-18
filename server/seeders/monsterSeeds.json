@@ -39,6 +39,32 @@
         "losses": 0
     },
     {
+        "name": "Thomasaurus 2",
+        "level": 97,
+        "sprite": " ",
+        "owner": "Thomas Siopes",
+        "hp": 1000,
+        "str": 300,
+        "def": 95,
+        "spd": 120,
+        "swg": 302,
+        "wins": 0,
+        "losses": 0
+    },
+    {
+        "name": "Thomasaurus 3: The Revenge",
+        "level": 97,
+        "sprite": " ",
+        "owner": "Thomas Siopes",
+        "hp": 1000,
+        "str": 300,
+        "def": 95,
+        "spd": 120,
+        "swg": 302,
+        "wins": 0,
+        "losses": 0
+    },
+    {
         "name": "Jimalodon",
         "level": 97,
         "sprite": " ",

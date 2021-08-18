@@ -1,10 +1,7 @@
 import React from 'react';
 // import background from '../assets/background/arcade-game-world-pixel-scene/45908.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import {Card, Row, Col, Button} from 'react-bootstrap';
 import character from '../assets/Bot Wheel/botWheel.png';
 import character2 from '../assets/Spirit Boxer/spiritBoxer.png';
 import '../assets/css/battlefield.css';

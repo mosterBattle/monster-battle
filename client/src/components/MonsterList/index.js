@@ -27,6 +27,7 @@ const MonsterList = ({
                             <p>SWG: {monster.swg}</p>
                             <p>Wins: {monster.wins}</p>
                             <p>Losses: {monster.losses}</p>
+                            <Link to={`/battlefield/${monster._id}`}>Start Battle!</Link>
                         </Card.Body>
                     </Card>
                 </Col>

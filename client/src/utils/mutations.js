@@ -25,12 +25,11 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_MONSTER = gql`
-  mutation addMonster($name: String!, $level: Int!, $sprite: String!, $hp: Int!, $str: Int!, $def: Int!, $spd: Int!, $swg: Int!) {
-    addMonster(name: $String, level: $Int, sprite: $String, hp: $Int, str: $Int, def: $Int, spd: $Int, swg: $Int) {
+  mutation addMonster($name: String!, $level: Int!, $hp: Int!, $str: Int!, $def: Int!, $spd: Int!, $swg: Int!) {
+    addMonster(name: $name, level: $level, hp: $hp, str: $str, def: $def, spd: $spd, swg: $swg) {
       _id
       name
       level
-      sprite
       owner
       hp
       str

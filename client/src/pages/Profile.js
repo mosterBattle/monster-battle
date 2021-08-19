@@ -13,7 +13,7 @@ import MonsterList from '../components/MonsterList';
 
 function ProfilePage() {
     const { username: userParam } = useParams();
-
+    
     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
       variables: { username: userParam },
     });

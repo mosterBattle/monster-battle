@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect, useParams} from 'react-router-dom';
+import {Redirect, useParams, Link} from 'react-router-dom';
 import {useQuery} from '@apollo/client';
 import {Card, Row} from 'react-bootstrap';
 
@@ -52,6 +52,11 @@ function ProfilePage() {
                         <MonsterList monsters={user.monsters}/>
                     </Row>
                 </Card.Body>
+                <Card.Footer>
+                  <Link className="mainBtn" to="/addmonster">
+                    Add Monster
+                  </Link>
+                </Card.Footer>
             </Card>
         </div>
     );

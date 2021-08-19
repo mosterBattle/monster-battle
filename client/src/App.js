@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Signup from './pages/Signup';
+import AddMonster from './pages/AddMonster';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import BattlePage from './pages/battlefield';
@@ -51,6 +52,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/addmonster">
+              <AddMonster />
             </Route>
             <Route exact path="/me">
               <Profile />

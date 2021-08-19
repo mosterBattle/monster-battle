@@ -27,7 +27,6 @@ const AddMonster = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     formState.level = parseInt(formState.level);
     formState.hp = parseInt(formState.hp);
     formState.str = parseInt(formState.str);

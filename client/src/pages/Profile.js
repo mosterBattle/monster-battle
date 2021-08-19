@@ -35,8 +35,6 @@ function ProfilePage() {
         </div>
       );
     }
-
-    console.log(user);
     
     return (
         <div>

@@ -6,8 +6,6 @@ import { ADD_GOLD } from '../utils/mutations';
 
 const Victory = ({ userId }) => {
     const gold = 100;
-    console.log(userId);
-    console.log(gold);
     const reward = "Collect reward";
 
     const [addGold, { error }] = useMutation(ADD_GOLD);
@@ -16,12 +14,9 @@ const Victory = ({ userId }) => {
         event.preventDefault();
 
         try {
-            console.log(userId);
-            console.log(gold);
             const { data } = await addGold({
                 variables: { userId, gold },
             });
-            console.log(gold);
         } catch (err) {
             console.error(err);
         }

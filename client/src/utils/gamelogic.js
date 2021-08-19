@@ -19,6 +19,7 @@
 // }
 
 let botMonster = {
+    name: "Enemy",
     hp: 900,
     str: 100,
     def: 60,
@@ -87,21 +88,12 @@ const defense = (monster, defMod, roundMod) => {
 // updates hp of attacked monster
 // ad = attack damage
 // for monster, pass in the monster being attacked
-const applyDamage = (ad, def, monster) => {
+const applyDamage = (ad, def, enemy, friend) => {
     let totalDmg = ad - def;
     if (totalDmg < 0) totalDmg = 0;
 
-    monster.hp = monster.hp - totalDmg;
-    console.log(`you hit your oppenent for ${totalDmg}. They now have ${monster.hp} hp.`)
-}
-
-
-const botAction = (userMonster) => {
-    let action = actions[Math.floor(Math.random()*actions.length)];
-
-    let botRoundmod = roundMod(botMonster)
-
-    applyDamage(attackDmg(botMonster, action.atkx, botRoundmod), defense(userMonster, action.defx, botRoundmod), userMonster);
+    enemy.hp -= totalDmg;
+    console.log(`${friend.name} hit for ${totalDmg}. ${enemy.name} now has ${enemy.hp} hp.`)
 }
 
 export const battle = (userMonster) => {
@@ -129,6 +121,7 @@ export const battle = (userMonster) => {
 
 export const battleAction = (e) => {
     let userMonster = {
+        name: e.target.getAttribute("data-name"),
         hp: e.target.getAttribute("data-hp"),
         str: e.target.getAttribute("data-str"),
         def: e.target.getAttribute("data-def"),
@@ -137,12 +130,20 @@ export const battleAction = (e) => {
     }
     // e.preventDefault();
     // the chosen actions damage and defense modifiers. gets 100, 75, 25, 0 percent of str
+    
+    //Player action
     let actionMod = actions[parseInt(e.target.getAttribute("data-attack"))];
 
     let playerRoundMod = roundMod(userMonster);
 
-    applyDamage(attackDmg(userMonster, actionMod.atkx, playerRoundMod), defense(botMonster, actionMod.defx, playerRoundMod), botMonster);
+    applyDamage(attackDmg(userMonster, actionMod.atkx, playerRoundMod), defense(botMonster, actionMod.defx, playerRoundMod), botMonster, userMonster);
 
-    botAction(userMonster);
+    //Bot action
+    let action = actions[Math.floor(Math.random()*actions.length)];
+
+    let botRoundmod = roundMod(botMonster)
+
+    applyDamage(attackDmg(botMonster, action.atkx, botRoundmod), defense(userMonster, action.defx, botRoundmod), userMonster, botMonster);
+
     battle(userMonster);
 }

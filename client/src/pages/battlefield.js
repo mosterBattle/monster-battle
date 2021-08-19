@@ -1,5 +1,3 @@
-import React from 'react';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -13,6 +11,7 @@ import { battleAction } from '../utils/gamelogic.js';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import Title from '../components/title';
+import Victory from '../components/winscreen';
 
 function Battlefield() {    
 
@@ -25,7 +24,6 @@ function Battlefield() {
     if (loading) {
       return <div>Loading...</div>;
     }
-  
     if (!user?.username) {
       return (
         <h4>
@@ -96,7 +94,7 @@ function Battlefield() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12}><Button variant="secondary">Next Round</Button></Col>
+                    <Victory userId={user._id}/>
                 </Row>
             </Card.Body>
             <audio controls autoPlay loop>

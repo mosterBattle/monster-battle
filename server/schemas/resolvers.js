@@ -88,6 +88,20 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    addGold: async (parent, { userId, gold }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $inc: { gold: gold },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+    }
   },
 };
 

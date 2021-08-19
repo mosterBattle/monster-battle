@@ -1,3 +1,13 @@
+// import React, { createContext, useContext } from 'react';
+
+// const BattleContext = createContext();
+
+// export const useBattleContext = () => useContext(BattleContext);
+
+// export const battleProvider = ({ children }) => {
+//     const 
+// }
+
 // Future dev: create a function for each attack and pass it in to the onclick event handler on the  page...
 
 // let userMonster = {
@@ -31,13 +41,13 @@ const defAtk = {
 }
 // attacking defense
 const Atkdef = {
-    atkx: .5,
-    defx: .5,
+    atkx: .25,
+    defx: .75,
 }
 // full defense
 const allOutDef = {
-    atkx: .25,
-    defx: .25,
+    atkx: 0,
+    defx: 1,
 }
 
 const actions = [
@@ -46,6 +56,8 @@ const actions = [
     Atkdef,
     allOutDef,
 ];
+
+let victory;
 
 // gives monsters bonuses based on their stats which depend on the round type
 // Also, keeps track of which round it is. 
@@ -92,7 +104,7 @@ const botAction = (userMonster) => {
     applyDamage(attackDmg(botMonster, action.atkx, botRoundmod), defense(userMonster, action.defx, botRoundmod), userMonster);
 }
 
-const battle = (userMonster) => {
+export const battle = (userMonster) => {
     if (round > 3) round = 0;
     // checks to see if both Monsters are still alive and handles when one or both monsters die
     if(userMonster.hp <= 0 && botMonster.hp > 0) {
@@ -100,6 +112,8 @@ const battle = (userMonster) => {
         // update user profile with a loss
     } else if (userMonster.hp > 0 && botMonster.hp <= 0) {
         console.log('you win!');
+        victory = true;
+        return victory;
         // update user profile with a win
     } else if (userMonster.hp < 0 && botMonster.hp < 0) {
         if (userMonster.spd > botMonster.spd) {

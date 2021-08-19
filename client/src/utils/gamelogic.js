@@ -1,18 +1,12 @@
-// import React from 'react';
-// import { useParams } from 'react-router-dom';
-// import { QUERY_USER, QUERY_ME } from '../utils/queries';
-// import { useQuery } from '@apollo/client';
-
-
 // Future dev: create a function for each attack and pass it in to the onclick event handler on the  page...
 
-let userMonster = {
-    hp: 1000,
-    str: 100,
-    def: 88,
-    spd: 120,
-    swg: 69
-}
+// let userMonster = {
+//     hp: 1000,
+//     str: 100,
+//     def: 88,
+//     spd: 120,
+//     swg: 69
+// }
 
 let botMonster = {
     hp: 900,
@@ -24,16 +18,34 @@ let botMonster = {
 
 let round = 0;
 
-// Just checking to see what the total stat points are for each monster
-// let totalPoints = (monsterObj) => {
-//     let sum = 0;
-//     for( let el in monsterObj ) {
-//         if( monsterObj.hasOwnProperty( el ) ) {
-//         sum += parseFloat( monsterObj[el] );
-//         }
-//     }
-//     return sum;
-// }
+// atkx = attack multiplier
+// defx = defense multiplier
+const allOutAtk = {
+    atkx: 1,
+    defx: 0,
+}
+// defensive attck
+const defAtk = {
+    atkx: .75,
+    defx: .25,
+}
+// attacking defense
+const Atkdef = {
+    atkx: .5,
+    defx: .5,
+}
+// full defense
+const allOutDef = {
+    atkx: .25,
+    defx: .25,
+}
+
+const actions = [
+    allOutAtk,
+    defAtk,
+    Atkdef,
+    allOutDef,
+];
 
 // gives monsters bonuses based on their stats which depend on the round type
 // Also, keeps track of which round it is. 
@@ -54,6 +66,7 @@ const attackDmg = (monster, dmgMod, roundMod) => {
 }
 // the calculated damage blocked by the action
 const defense = (monster, defMod, roundMod) => {
+    // console.log(userMonster);
     let defense = Math.round((defMod * monster.def) * (roundMod * .03));
     return defense;
 } 
@@ -71,36 +84,7 @@ const applyDamage = (ad, def, monster) => {
 }
 
 
-const botAction = () => {
-    // atkx = attack multiplier
-    // defx = defense multiplier
-    const allOutAtk = {
-        atkx: 1,
-        defx: 0,
-    }
-    // defensive attck
-    const defAtk = {
-        atkx: .75,
-        defx: .25,
-    }
-    // attacking defense
-    const Atkdef = {
-        atkx: .5,
-        defx: .5,
-    }
-    // full defense
-    const allOutDef = {
-        atkx: .25,
-        defx: .25,
-    }
-
-    const actions = [
-        allOutAtk,
-        defAtk,
-        Atkdef,
-        allOutDef,
-    ];
-
+const botAction = (userMonster) => {
     let action = actions[Math.floor(Math.random()*actions.length)];
 
     let botRoundmod = roundMod(botMonster)
@@ -108,7 +92,7 @@ const botAction = () => {
     applyDamage(attackDmg(botMonster, action.atkx, botRoundmod), defense(userMonster, action.defx, botRoundmod), userMonster);
 }
 
-const battle = () => {
+const battle = (userMonster) => {
     if (round > 3) round = 0;
     // checks to see if both Monsters are still alive and handles when one or both monsters die
     if(userMonster.hp <= 0 && botMonster.hp > 0) {
@@ -130,17 +114,21 @@ const battle = () => {
 }
 
 export const battleAction = (e) => {
-    e.preventDefault();
+    let userMonster = {
+        hp: e.target.getAttribute("data-hp"),
+        str: e.target.getAttribute("data-str"),
+        def: e.target.getAttribute("data-def"),
+        spd: e.target.getAttribute("data-spd"),
+        swg: e.target.getAttribute("data-swg")
+    }
+    // e.preventDefault();
     // the chosen actions damage and defense modifiers. gets 100, 75, 25, 0 percent of str
-    let actionDmgMod = parseInt(e.target.getAttribute("data-attack")) / 100;
-    let defenseMod = parseInt(e.target.getAttribute("data-defense")) / 100;
+    let actionMod = actions[parseInt(e.target.getAttribute("data-attack"))];
 
     let playerRoundMod = roundMod(userMonster);
 
-    applyDamage(attackDmg(userMonster, actionDmgMod, playerRoundMod), defense(botMonster, defenseMod, playerRoundMod), botMonster);
-    // console.log(`you hit your oppenent for ${}. They now have ${botMonster.hp} hp.`)
+    applyDamage(attackDmg(userMonster, actionMod.atkx, playerRoundMod), defense(botMonster, actionMod.defx, playerRoundMod), botMonster);
 
-    // TODO: create random action choice for bot monster
-    botAction();
-    battle();
+    botAction(userMonster);
+    battle(userMonster);
 }

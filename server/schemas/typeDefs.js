@@ -45,6 +45,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addMonster(name: String!, level: Int!, hp: Int!, str: Int!, def: Int!, spd: Int!, swg: Int!): Monster
     removeMonster(monsterId: ID!): Monster
+    addGold(userId: ID, gold: Int!): User
   }
 `;
 

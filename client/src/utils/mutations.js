@@ -39,3 +39,13 @@ export const ADD_MONSTER = gql`
     }
   }
 `;
+
+export const ADD_GOLD = gql`
+  mutation addGold($userId: ID, $gold: Int!) {
+    addGold(userId: $userId, gold: $gold) {
+      _id
+      username
+      gold
+    }
+  }
+`

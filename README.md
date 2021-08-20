@@ -2,6 +2,7 @@
 
 ## Description
 
+
 This application is a react web app that allows the user to create monsters and battle with them against other monsters in an RPG, turn-based-style game.
 
 ## Motivation
